@@ -1,18 +1,40 @@
 {
+  // 编译器设置
   "compilerOptions": {
-    "target": "ESNext",
+    // 指定了声明文件（.d.ts）的根目录。这里设置了两个目录：
+    // node_modules/@types（默认的类型声明文件目录）和src/types（用于存放自定义的类型声明文件）。
+    "typeRoots": [
+      "node_modules/@types", // 默认值
+      "src/types"
+    ],
+    // 编译的ECMAScript 版本   最新
+    "target": "esnext",
+    // 编译器是否应该使用define关键字来定义类字段
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    // 模块系统 esnext，表示使用最新的 ES 模块系统。
+    "module": "esnext",
+    // 模块解析策略 设置为node意味着将遵循 Node.js 的模块解析规则。
+    "moduleResolution": "node",
+    // 是否开启严格模式
     "strict": true,
+    // 定义了对 JSX 的支持模式。preserve表示保留 JSX 语法，不进行转换。
     "jsx": "preserve",
+    // 生成源码映射文件
+    "sourceMap": true,
+    // 编译器是否应该允许导入 JSON 文件作为模块。
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    // 启用 ES 模块互操作
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
-    "noEmit": true
+    // 编译过程需要的库文件
+    "lib": ["esnext", "dom"],
+    // 模块解析的根目录
+    "baseUrl": "./",
+    // 文件夹别名
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // 包含在编译中的文件格式
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

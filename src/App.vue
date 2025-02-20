@@ -1,29 +1,28 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app-content">
+    <RouterView></RouterView>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<script setup lang="ts">
+import { reactive, ref } from 'vue'
+let string: string = 'string'
+string = '1'
+console.log("🚀 ~ string:", string)
+let arr: number[] = [1, 3]
+console.log("🚀 ~ arr:", arr)
+let arr1: Array<string> = ['一', '二']
+console.log("🚀 ~ arr1:", arr1)
+let arr2: (number | string)[] = ['一', 2]
+console.log("🚀 ~ arr2:", arr2)
+const fc = (a: number, b: number): number => { return a + b }
+
+</script>
+
+<style scoped lang="scss">
+.app-content {
+  width: 100%;
+  height: 100vh;
+  // background-color: red;
 }
 </style>
