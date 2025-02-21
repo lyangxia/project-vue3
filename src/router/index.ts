@@ -3,13 +3,13 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        name: 'Layout',
+        name: 'Login',
         meta: {
 
             keepAlive: true,
             requireAuth: false
         },
-        component: () => import('@/views/layout/index.vue')
+        component: () => import('@/views/login/index.vue')
     }
 ]
 
